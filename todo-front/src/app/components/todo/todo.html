@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Minha Lista</h1>
+
+  <div class="input-group">
+    <input type="text"
+           [(ngModel)]="newTitle"
+           placeholder="Digite uma tarefa..."/>
+      <button 
+      type="button" 
+      class="add-btn" 
+      (click)="addTodo()">Adicionar</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let todo of todos()">{{todo.title}}
+      <button 
+        class="delete-btn" 
+        type="button"
+        (click)="deleteTodo(todo.id)">X</button>
+    </li>
+  </ul>
+</div>
